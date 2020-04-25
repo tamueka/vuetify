@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Botones from '../components/Botones.vue'
+import Botones from '../components/Botones.vue';
+import Usuarios from '@/components/Usuarios';
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ Vue.use(VueRouter)
       path: "/botones",
       name: "Botones",
       component: Botones,
+    },
+    {
+      path: "/usuarios",
+      name: "Usuarios",
+      component: Usuarios,
     },
     {
       path: "/about",
