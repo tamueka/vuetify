@@ -40,17 +40,23 @@
     <v-content>
       <HelloWorld/>
     </v-content>
+
+    <v-content>
+      <Botones/>
+    </v-content>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld';
+import Botones from './components/Botones';
 
 export default {
   name: 'App',
 
   components: {
     HelloWorld,
+    Botones
   },
 
   data: () => ({
