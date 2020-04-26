@@ -15,7 +15,7 @@
           <v-img v-bind="props" gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"></v-img>
         </template>
 
-        <v-app-bar-nav-icon>
+        <v-app-bar-nav-icon @click="drawer = !drawer">
           <v-icon>mdi-menu</v-icon>
         </v-app-bar-nav-icon>
 
@@ -37,12 +37,6 @@
               <v-icon>mdi-dots-vertical</v-icon>
             </v-btn>
           </template>
-
-          <v-list>
-            <v-list-item v-for="(item, i) in items" :key="i">
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
         </v-menu>
 
         <template v-slot:extension>
@@ -61,19 +55,57 @@
           </v-container>
         </v-content>
 
+        <!-- FOOTER -->
         <Footer></Footer>
       </v-sheet>
     </v-card>
+
+    <!-- NAVEGACION LATERAL -->
+    <v-navigation-drawer app temporary v-model="drawer">
+      <v-list-item>
+        <v-list-item-avatar>
+          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title>John Leider</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list dense>
+        <v-list-item v-for="item in items" :key="item.title" link>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
   </v-app>
 </template>
 
 <script>
+
 import Footer from "./components/Footer";
 
 export default {
   name: "App",
+  data() {
+    return {
+      drawer: false,
+      items: [
+        { title: "Home", icon: "mdi-home" },
+        { title: "About", icon: "mdi-alarm" }
+      ]
+    };
+  },
   components: {
-    Footer
+    Footer,
   }
 };
 </script>
