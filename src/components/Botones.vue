@@ -1,9 +1,8 @@
 
 <template>
-  <v-container class="mb-5" grid-list-xs>
+  <v-container class="mb-5">
     <v-layout>
       <v-flex>
-        <hr />
         <h1 class="mb-5 display-2">BOTONES VUETIFY</h1>
         <v-btn>Boton</v-btn>
         <v-btn class="ml-5" color="primary">Boton</v-btn>

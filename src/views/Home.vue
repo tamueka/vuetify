@@ -1,5 +1,5 @@
 <template>
-  <v-container class="mt-5" fluid>
+  <v-container>
     <v-layout wrap>
       <v-flex class="primary" xs12>
         <h1>12 columns</h1>
