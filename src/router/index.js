@@ -23,6 +23,12 @@ Vue.use(VueRouter)
       component: Usuarios,
     },
     {
+      path: "/tareas-crud",
+      name: "tareas-crud",
+      component: () =>
+        import("../views/Tareas-crud.vue"),
+    },
+    {
       path: "/about",
       name: "About",
       // route level code-splitting

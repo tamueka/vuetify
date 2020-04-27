@@ -45,6 +45,7 @@
             <v-tab router-link to="/botones">Botones</v-tab>
             <v-tab router-link to="/usuarios">Usuarios</v-tab>
             <v-tab router-link to="/about">Modal</v-tab>
+            <v-tab router-link to="/tareas-crud">Tareas</v-tab>
           </v-tabs>
         </template>
       </v-app-bar>
@@ -73,7 +74,7 @@
       <v-divider></v-divider>
 
       <v-list dense>
-        <v-list-item v-for="item in items" :key="item.title" link>
+        <v-list-item v-for="item in items" :key="item.title" link :to="item.link">
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -100,8 +101,11 @@ export default {
       dialog: false,
       drawer: false,
       items: [
-        { title: "Home", icon: "mdi-home" },
-        { title: "About", icon: "mdi-alarm" }
+        { title: "Home", icon: "mdi-home", link: "/" },
+        { title: "Botones", icon: "mdi-buffer", link: "/botones" },
+        { title: "Usuarios", icon: "mdi-emoticon-cool", link: "/usuarios" },
+        { title: "Modal", icon: "mdi-window-restore", link: "/about" },
+        { title: "Tareas", icon: "mdi-worker", link: "/tareas-crud" },
       ]
     };
   },
