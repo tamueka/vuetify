@@ -59,7 +59,6 @@
       <Footer></Footer>
     </v-card>
     <!-- NAVEGACION LATERAL -->
-    <!-- NAVEGACION LATERAL -->
     <v-navigation-drawer app temporary v-model="drawer">
       <v-list-item>
         <v-list-item-avatar>
