@@ -29,7 +29,7 @@
 
 <script>
 import axios from "axios";
-import Usuario from "./Usuario";
+import Usuario from "../components/Usuario";
 
 function loadUsers() {
   axios.get(`https://reqres.in/api/users?page=${this.page}`).then(response => {

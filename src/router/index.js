@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Botones from '../components/Botones.vue';
-import Usuarios from '@/components/Usuarios';
+import Botones from '../views/Botones.vue';
+import Usuarios from '@/views/Usuarios';
 
 Vue.use(VueRouter)
 

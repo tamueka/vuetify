@@ -44,13 +44,13 @@
             <v-tab router-link to="/">Home</v-tab>
             <v-tab router-link to="/botones">Botones</v-tab>
             <v-tab router-link to="/usuarios">Usuarios</v-tab>
-            <v-tab router-link to="/about">Modal</v-tab></v-tab>
+            <v-tab router-link to="/about">Modal</v-tab>
           </v-tabs>
         </template>
       </v-app-bar>
-      <v-sheet id="scrolling-techniques-4" class="overflow-y-auto">
+      <v-sheet id="scrolling-techniques-4" class="overflow-y-auto" style="height: 100vh;">
         <v-content>
-          <v-container style="height: 100vh; margin-top: 260px;">
+          <v-container style="margin-top: 260px;">
             <router-view></router-view>
           </v-container>
         </v-content>
@@ -58,7 +58,7 @@
        <!-- FOOTER -->
       <Footer></Footer>
     </v-card>
-
+    <!-- NAVEGACION LATERAL -->
     <!-- NAVEGACION LATERAL -->
     <v-navigation-drawer app temporary v-model="drawer">
       <v-list-item>
@@ -85,13 +85,13 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
   </v-app>
 </template>
 
 <script>
 
 import Footer from "./components/Footer";
+import NavegacionLateral from "./components/NavegacionLateral";
 import About from "./views/About";
 
 export default {
@@ -108,6 +108,8 @@ export default {
   },
   components: {
     Footer,
+    About,
+    NavegacionLateral,
   }
 };
 </script>
