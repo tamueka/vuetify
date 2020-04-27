@@ -54,10 +54,9 @@
             <router-view></router-view>
           </v-container>
         </v-content>
-
-        <!-- FOOTER -->
-        <Footer></Footer>
       </v-sheet>
+       <!-- FOOTER -->
+      <Footer></Footer>
     </v-card>
 
     <!-- NAVEGACION LATERAL -->

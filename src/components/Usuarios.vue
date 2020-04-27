@@ -1,19 +1,26 @@
 
 <template>
   <v-container>
-    <v-layout>
+    <v-layout class="users">
       <v-flex>
-        <div class="users">
-          <h1>Usuarios {{ total }}:</h1>
-          <v-btn @click="loadUsers" color="primary" x-large dark>Cargar Usuarios</v-btn>
-          <ul v-for="user in users" :key="user.id" @click="loadUser(user)">
-            <usuario :user="user"></usuario>
-          </ul>
-          <button v-if="ifNext" @click="next">Siguiente</button>
-          <button v-if="ifPrev" @click="prev">Anterior</button>
-          <div v-if="userSelect">
-            <usuario :user="userSelect"></usuario>
-          </div>
+        <div>
+          <v-btn @click="loadUsers" color="primary" dark>
+            Cargar Usuarios
+            <v-icon class="ml-2" dark>mdi-cloud-upload</v-icon>
+          </v-btn>
+        </div>
+        <div v-for="user in users" :key="user.id" @click="loadUser(user)">
+          <usuario :user="user"></usuario>
+        </div>
+        <v-btn v-if="ifNext" @click="next" color="primary" dark>
+          Siguiente
+          <v-icon class="ml-2" dark>mdi-chevron-right</v-icon>
+        </v-btn>
+        <v-btn v-if="ifPrev" @click="prev" color="primary" dark>
+          <v-icon class="mr-2" dark>mdi-chevron-left</v-icon>Anterior
+        </v-btn>
+        <div v-if="userSelect">
+          <usuario :user="userSelect"></usuario>
         </div>
       </v-flex>
     </v-layout>
@@ -82,10 +89,10 @@ export default {
 </script>
 
 <style scoped>
-.users {
+/* .users {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
+} */
 </style>
