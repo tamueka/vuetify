@@ -72,10 +72,16 @@
         </v-card>
       </v-flex>
     </v-layout>
+
+    <!-- DIALOG -->
+    <About></About>
+
   </v-container>
 </template>
 
 <script>
+import About from '../views/About';
+
 export default {
   name: "Usuario",
   props: {
@@ -83,7 +89,10 @@ export default {
       type: Object,
       required: true
     }
-  }
+  },
+  components: {
+    About
+  },
 };
 </script>
 

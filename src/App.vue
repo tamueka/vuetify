@@ -44,7 +44,7 @@
             <v-tab router-link to="/">Home</v-tab>
             <v-tab router-link to="/botones">Botones</v-tab>
             <v-tab router-link to="/usuarios">Usuarios</v-tab>
-            <v-tab router-link to="/about">About</v-tab>
+            <v-tab router-link to="/about">Modal</v-tab></v-tab>
           </v-tabs>
         </template>
       </v-app-bar>
@@ -85,17 +85,20 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+
   </v-app>
 </template>
 
 <script>
 
 import Footer from "./components/Footer";
+import About from "./views/About";
 
 export default {
   name: "App",
   data() {
     return {
+      dialog: false,
       drawer: false,
       items: [
         { title: "Home", icon: "mdi-home" },
