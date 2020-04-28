@@ -49,9 +49,9 @@
           </v-tabs>
         </template>
       </v-app-bar>
-      <v-sheet id="scrolling-techniques-4" class="overflow-y-auto" style="height: 100vh;">
+      <v-sheet id="scrolling-techniques-4" class="overflow-y-auto">
         <v-content>
-          <v-container style="margin-top: 260px;">
+          <v-container style="margin-top: 260px; height: 1000px">
             <router-view></router-view>
           </v-container>
         </v-content>
