@@ -18,7 +18,7 @@
       </v-flex>
 
       <!-- RIGHT CARDS -->
-      <v-flex v-if="formAgregar"  md6>
+      <v-flex v-if="formAgregar" md6>
         <v-card class="mb-3 pa-3">
           <v-form @submit.prevent="agregarTarea">
             <v-text-field label="Titulo de la tarea" v-model="titulo"></v-text-field>
@@ -28,25 +28,22 @@
         </v-card>
       </v-flex>
 
-        <v-flex v-if="!formAgregar" md6>
-            <v-card class="mb-3 pa-3">
-            <v-form @submit.prevent="editarTarea">
+      <v-flex v-if="!formAgregar" md6>
+        <v-card class="mb-3 pa-3">
+          <v-form @submit.prevent="editarTarea">
             <v-text-field label="Titulo de la tarea" v-model="titulo"></v-text-field>
             <v-textarea label="Descripcion de la tarea" v-model="descripcion"></v-textarea>
             <v-btn color="warning" type="submit">Editar Tarea</v-btn>
           </v-form>
         </v-card>
       </v-flex>
-
     </v-layout>
-
 
     <!-- ALERT SNACKBAR -->
     <v-snackbar v-model="snackbar">
       {{ mensaje }}
       <v-btn dark text @click="snackbar = false">Cerrar</v-btn>
     </v-snackbar>
-
   </v-container>
 </template>
 
@@ -77,13 +74,11 @@ export default {
       snackbar: false,
       mensaje: "",
       formAgregar: true,
-      indexTarea: '',
+      indexTarea: ""
     };
   },
   methods: {
     agregarTarea(titulo, descripcion) {
-      /* console.log(this.titulo, this.descripcion); */
-
       if (this.titulo === "" || this.descripcion === "") {
         this.snackbar = true;
         this.mensaje = "Error: Introduzca datos";
@@ -99,23 +94,25 @@ export default {
         this.mensaje = "Tarea Agregada";
       }
     },
-    eliminarTarea(id){
-        this.listaTareas = this.listaTareas.filter(e => e.id != id);
+    eliminarTarea(id) {
+      this.listaTareas = this.listaTareas.filter(e => e.id != id);
+      this.snackbar = true;
+      this.mensaje = "Tarea Eliminada";
     },
-    editar(index){
-        this.formAgregar = false;
-        this.titulo = this.listaTareas[index].titulo;
-        this.descripcion = this.listaTareas[index].descripcion;
-        this.indexTarea = index;
+    editar(index) {
+      this.formAgregar = false;
+      this.titulo = this.listaTareas[index].titulo;
+      this.descripcion = this.listaTareas[index].descripcion;
+      this.indexTarea = index;
     },
-    editarTarea(){
-        this.listaTareas[this.indexTarea].titulo = this.titulo;
-        this.listaTareas[this.indexTarea].descripcion = this.descripcion;
-        this.formAgregar = true;
-        this.titulo = "";
-        this.descripcion = "";
-        this.snackbar = true;
-        this.mensaje = "Tarea Editada";
+    editarTarea() {
+      this.listaTareas[this.indexTarea].titulo = this.titulo;
+      this.listaTareas[this.indexTarea].descripcion = this.descripcion;
+      this.formAgregar = true;
+      this.titulo = "";
+      this.descripcion = "";
+      this.snackbar = true;
+      this.mensaje = "Tarea Editada";
     }
   }
 };

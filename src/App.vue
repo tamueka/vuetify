@@ -56,9 +56,10 @@
           </v-container>
         </v-content>
       </v-sheet>
-       <!-- FOOTER -->
+      <!-- FOOTER -->
       <Footer></Footer>
     </v-card>
+
     <!-- NAVEGACION LATERAL -->
     <v-navigation-drawer app temporary v-model="drawer">
       <v-list-item>
@@ -89,7 +90,6 @@
 </template>
 
 <script>
-
 import Footer from "./components/Footer";
 import NavegacionLateral from "./components/NavegacionLateral";
 import About from "./views/About";
@@ -105,14 +105,14 @@ export default {
         { title: "Botones", icon: "mdi-buffer", link: "/botones" },
         { title: "Usuarios", icon: "mdi-emoticon-cool", link: "/usuarios" },
         { title: "Modal", icon: "mdi-window-restore", link: "/about" },
-        { title: "Tareas", icon: "mdi-worker", link: "/tareas-crud" },
+        { title: "Tareas", icon: "mdi-worker", link: "/tareas-crud" }
       ]
     };
   },
   components: {
     Footer,
     About,
-    NavegacionLateral,
+    NavegacionLateral
   }
 };
 </script>
